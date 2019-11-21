@@ -74,6 +74,22 @@ const baseConfg = {
           "postcss-loader",
           "less-loader"
         ], //style-loader 把css插入到header标签中
+        exclude: /node_modules|\.module\.less$/
+      },
+      {
+        test: /\.module\.less$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: '[local]_[hash:base64:5]'
+            },
+          },
+          "postcss-loader",
+          "less-loader"
+        ], //style-loader 把css插入到header标签中
         exclude: /node_modules/
       },
       {

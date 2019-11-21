@@ -1,15 +1,17 @@
 <template>
     <div class="home">
-        home2ss  test asins 22
+        home input value: {{value}} <br />
+      <input type="text" v-model="value" />
         <Button type="primary">Primary</Button>
     </div>
 </template>
 <script>
 
 export default {
-    data(){
-        return{
 
+    data(){
+        return {
+            value: '0',
         }
     },
     mounted(){
