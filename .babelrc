@@ -1,4 +1,9 @@
 {
-    "presets": ["es2015", "stage-0"],
-    "plugins": ["transform-runtime"]
+  "presets": [
+    "@babel/preset-env"
+  ],
+  "plugins": [
+    "@vue/babel-plugin-transform-vue-jsx",
+    "@babel/plugin-syntax-jsx"
+  ]
 }

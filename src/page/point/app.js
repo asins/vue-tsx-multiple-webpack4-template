@@ -1,9 +1,9 @@
 import _ from "lodash";
 
-import "../src/common/component/global";
+import "../../component/global";
 import Vue from "vue";
 
-import Point from "../src/page/point/point.vue";
+import Point from "./point.vue";
 
 new Vue({
     el: "#app",
@@ -11,4 +11,4 @@ new Vue({
     beforeCreate () {
         Vue.prototype.bus = this;
     }
-}); 
+});

@@ -39,7 +39,7 @@ export default {
             this.ORANGE(10)
         },
         mangoAdd(){
-           this.asyncMango(20)  
+           this.asyncMango(20)
         },
         timeout(){
             return new Promise((resolve,reject)=>{
@@ -68,5 +68,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-   
+
 </style>

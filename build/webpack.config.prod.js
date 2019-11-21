@@ -13,12 +13,12 @@ const path = require("path");
 
 module.exports = webpackMerge(baseConfg,{
     mode: "production",
-    performance: { 
-        hints: false 
+    performance: {
+        hints: false
     },
     devtool: "cheap-module-source-map",// 原始代码（只有行内）每行代码从loader中进行映射
     plugins: [
-        new CleanWebpackPlugin(["dist"], { 
+        new CleanWebpackPlugin(["dist"], {
             root: path.resolve(__dirname, ".."),
             dry: false // 启用删除文件
         })

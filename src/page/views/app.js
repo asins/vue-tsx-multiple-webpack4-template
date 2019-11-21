@@ -1,12 +1,12 @@
 import Vue from "vue";
 
-import Views from "../src/page/views/views.vue";
-import router from "../src/router/router";
-import { getOs } from "../util/util";
+import Views from "./views.vue";
+import router from "../../router/router";
+import { getOs } from "../../../util/util";
 
 // 通过路由钩子函数判断做出你响应的业务需求
 router.beforeEach((to, from, next) => {
-    
+
     // 判断路由有无
     if(!to.matched || to.matched.length===0){
         next("404");
@@ -30,4 +30,4 @@ new Vue({
     router,
     el: "#app",
     render: h => h(Views)
-}); 
+});

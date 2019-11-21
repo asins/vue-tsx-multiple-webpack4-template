@@ -2,10 +2,7 @@
 
 ------
 
-# 前言
-
-  > 之前写过一次关于webpack配置多页面应用,写的不是很好,这次项目要用到多页面应用,于是重新基于webpack4构建了一套关于vue的多页面应用。我在网上搜索了一圈，发现vue多页面配置，大部分都是基于vue-cli配置的，很少是从基础开始配置，如是我通过webpack4,构建了一个提供多页面入口，打包，调试的轻量级的构建工具，不依赖过多配置，只加载常用的配置，用更少的代码，做更多的东西
-
+从[vue-multiple-webpack4-template](https://github.com/hangjob/vue-multiple-webpack4-template.git)修改而来，让项目支持TS、TSX。
 
 # 项目结构
 ```
@@ -21,20 +18,14 @@
 ├── pages.js                                    // 多页面配置项
 ```
 # 项目运行
-    
-   
-    
-    克隆项目
 
-    git clone git@github.com:hangjob/vue-multiple-webpack4-template.git
-   
-  
+
     安装依赖
 
     npm install  或 yarn
-   
 
-  
+
+
     开发模式
 
     npm run dev
@@ -46,15 +37,12 @@
     http://localhost:3000/point.html    //演示多页面4-演示引入组件及传值($attr,$parent,bus,props,$emit)
     http://localhost:3000/ftrem.html    //演示多页面5-webpack配置rem演示自适应
     http://localhost:3000/views.html    //演示多页面6-演示vue-router常规配置以及路由拦截
-    
+
     打包模式
 
     npm run build
 
     打包后生成文件目录
-    
-![此处输入图片的描述][1]
-
 
 
 # 文件解释
@@ -66,7 +54,6 @@
             page: 'home',
             entry: path.resolve(__dirname, './page/home.js'), //指向入口文件
             title: '这是页面1',
-            template: path.resolve(__dirname, './public/index.html'), //指向模板文件
             filename: 'home.html',
             chunks: ['home','common'], // 引入公共模块common
         },
@@ -74,7 +61,6 @@
             page: 'login',
             entry: path.resolve(__dirname, './page/login.js'),  //指向入口文件
             title: '这是页面2',
-            template: path.resolve(__dirname, './public/index.html'), //指向模板文件
             filename: 'login.html',
             chunks: ['login'],
         }
@@ -90,7 +76,7 @@
     watchOptions: {
       poll: 1000, //每秒监控讯问次数
       aggregateTimeout: 500, //防抖
-      ignored: '/node_modules/' //忽略监控文件 
+      ignored: '/node_modules/' //忽略监控文件
     },
     //https://juejin.im/post/5bb085dd6fb9a05cd24da5cf 参考链接
     devServer:{
@@ -108,7 +94,7 @@
     ode: 'production',
     devtool: 'cheap-module-source-map',// 原始代码（只有行内）每行代码从loader中进行映射
     plugins: [
-        new CleanWebpackPlugin(['dist'], { 
+        new CleanWebpackPlugin(['dist'], {
             root: path.resolve(__dirname, '..'),
             dry: false // 启用删除文件
         })
@@ -157,7 +143,7 @@
     ```
     npm config set registry https://registry.npm.taobao.org
     ```
-    #### 配置后可通过下面方式来验证是否成功 
+    #### 配置后可通过下面方式来验证是否成功
 
     ```
     npm config get registry 或者 npm info express
@@ -168,11 +154,3 @@
     ```
     npm install -g cnpm --registry=https://registry.npm.taobao.org
     ```
-
-# 说明
-
->  如果对您有帮助，后面会持续更新，您可以点右上角 "Star" 支持一下 谢谢！ ^_^
->  如要在编译过程中遇到错误，点击[联系作者](https://www.vipbic.com/ourselves.html)
-
-
-  [1]: https://www.vipbic.com/uploads/20190301/2ffbb06148c07174e2d29dce8f69d388.png
