@@ -25,7 +25,7 @@ module.exports = webpackMerge(baseConfg, {
     // stats:'errors-only',
     quiet: false, //控制台中不输出打包的信息
     progress: true, //显示打包的进度
-    contentBase: "/", //contentBase默认是当前的工作目录，当它查不到打包在内存中的资源的时候，它就会到contentBase中去找
+    contentBase: "./dist", //contentBase默认是当前的工作目录，当它查不到打包在内存中的资源的时候，它就会到contentBase中去找
     publicPath: "/", //https://blog.csdn.net/lhjuejiang/article/details/80243975 解释devServer
     compress: true, //开启gzip压缩
     proxy: {    //配置代理
