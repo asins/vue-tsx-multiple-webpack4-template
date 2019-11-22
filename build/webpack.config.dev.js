@@ -22,7 +22,7 @@ module.exports = webpackMerge(baseConfg, {
     lazy: false, //不启动懒加载
     hot: true, //开启热点
     overlay: true, //在浏览器上全屏显示编译的errors或warnings
-    // stats:'errors-only',
+    // stats:'errors-only', // 表示只打印错误
     quiet: false, //控制台中不输出打包的信息
     progress: true, //显示打包的进度
     contentBase: "./dist", //contentBase默认是当前的工作目录，当它查不到打包在内存中的资源的时候，它就会到contentBase中去找

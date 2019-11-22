@@ -43,7 +43,13 @@ export default class World extends Vue {
         <p>Watch能力测试： {this.msg}</p>
         <p>CSS Modules的使用测试（按钮变为黄色），使用时文件名必须是.module.less结尾： <button class={styles_module.btn} onClick={() => this.value = '' }>Clear</button></p>
         {/* <p>子组件slots引用测试：<Child msg="这里是向子组件传入的参数值" slots={childSlots}></Child></p> */}
-        <p>子组件scoped-slots引用测试：<Child msg="这里是向子组件传入的参数值" scopedSlots={childScopedSlots}></Child></p>
+        <p>
+          子组件scoped-slots引用测试：
+          <Child msg="这里是向子组件传入的参数值" scopedSlots={childScopedSlots}>
+            <span>默认 slot内容</span>
+            <span slot="testSlot">test slot内容</span>
+          </Child>
+        </p>
       </div>
       <div>
         <h4><del>v-modle方式的事件交互：能支持vue的.trim等方式</del></h4>
