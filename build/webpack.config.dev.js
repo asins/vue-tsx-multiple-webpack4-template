@@ -5,8 +5,8 @@ const baseConfg = require("./webpack.config.base");
 
 module.exports = webpackMerge(baseConfg, {
   mode: "development",
-  // devtool: "cheap-module-eval-source-map",// 原始代码（只有行内）,但是更高的质量和更低的性能
-  devtool: "cheap-module-source-map",// 原始代码（只有行内）每行代码从loader中进行映射
+  devtool: "cheap-module-eval-source-map",// 原始代码（只有行内）,但是更高的质量和更低的性能
+  // devtool: "cheap-module-source-map",// 原始代码（只有行内）每行代码从loader中进行映射
   watch: true,
   watchOptions: {
     poll: 1000, //每秒监控讯问次数

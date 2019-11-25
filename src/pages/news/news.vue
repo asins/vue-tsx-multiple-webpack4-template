@@ -9,7 +9,6 @@
 </template>
 <script>
 import { mapGetters,mapMutations,mapActions } from  'vuex'
-import { async } from 'q';
 export default {
     data(){
         return{

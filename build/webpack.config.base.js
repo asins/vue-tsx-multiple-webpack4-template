@@ -5,13 +5,35 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const multiple = require("../pages.js");
+const multiple = require("../pages");
 
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
+// const Utils = require('./utils');
+const glob = require('glob');
 
+// Utils.getMultiEntry('./src/pages/**/*.js','js');
+// process.exit();
 
 const entry = {};
 const plugins = [];
+
+(() => {
+const entry = {};
+glob.sync('./src/pages/**/app.*s').forEach(path => {
+  console.log('path-->', path);
+  const chunk = path.split('./src/pages/')[1].split('/app.')[0]
+  entry[chunk] = {
+    entry: path,
+    template: 'public/index.html',
+    // title: titles[chunk],
+    chunks: ['chunk-vendors', 'chunk-common', chunk]
+  }
+});
+console.log('entry-->', entry);
+// process.exit();
+})();
+
+
 
 // 配置生成多页面
 multiple.pages.forEach((value) => {

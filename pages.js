@@ -5,7 +5,7 @@ module.exports = {
   pages: [
     {
       page: "home",
-      entry: path.resolve(__dirname, "./src/page/home/app.js"), //指向入口文件
+      entry: path.resolve(__dirname, "./src/pages/home/app.js"), //指向入口文件
       title: "这是页面1",
       filename: "home.html",
       minify: {
@@ -17,7 +17,7 @@ module.exports = {
     },
     {
       page: "tsx",
-      entry: path.resolve(__dirname, "./src/page/tsx/app.ts"),  //指向入口文件
+      entry: path.resolve(__dirname, "./src/pages/tsx/app.ts"),  //指向入口文件
       title: "使用tsx语法",
       filename: "tsx.html",
       minify: {
@@ -29,7 +29,7 @@ module.exports = {
     },
     {
       page: "login",
-      entry: path.resolve(__dirname, "./src/page/login/app.js"),  //指向入口文件
+      entry: path.resolve(__dirname, "./src/pages/login/app.js"),  //指向入口文件
       title: "这是页面2",
       filename: "login.html",
       minify: {
@@ -41,7 +41,7 @@ module.exports = {
     },
     {
       page: "news",
-      entry: path.resolve(__dirname, "./src/page/news/app.ts"),  //指向入口文件
+      entry: path.resolve(__dirname, "./src/pages/news/app.ts"),  //指向入口文件
       title: "演示加载其它框架",
       filename: "news.html",
       minify: {
@@ -52,8 +52,20 @@ module.exports = {
       hash: true //生成带有hash值
     },
     {
+      page: "news-child",
+      entry: path.resolve(__dirname, "./src/pages/news/child/app.ts"),  //指向入口文件
+      title: "演示加载子目录",
+      filename: "news/child.html",
+      minify: {
+        removeAttributeQuotes: false, //删除属性的双引号
+        collapseInlineTagWhitespace: true //折叠一行
+      },
+      chunks: ["news/child", "common"],
+      hash: true //生成带有hash值
+    },
+    {
       page: "point",
-      entry: path.resolve(__dirname, "./src/page/point/app.js"),  //指向入口文件
+      entry: path.resolve(__dirname, "./src/pages/point/app.js"),  //指向入口文件
       title: "演示引入组件及传值",
       filename: "point.html",
       minify: {
@@ -65,7 +77,7 @@ module.exports = {
     },
     {
       page: "ftrem",
-      entry: path.resolve(__dirname, "./src/page/ftrem/app.js"),  //指向入口文件
+      entry: path.resolve(__dirname, "./src/pages/ftrem/app.js"),  //指向入口文件
       title: "演示rem自适应",
       filename: "ftrem.html",
       minify: {
@@ -77,7 +89,7 @@ module.exports = {
     },
     {
       page: "views",
-      entry: path.resolve(__dirname, "./src/page/views/app.js"),  //指向入口文件
+      entry: path.resolve(__dirname, "./src/pages/views/app.js"),  //指向入口文件
       title: "演示vue-router",
       filename: "views.html",
       minify: {
